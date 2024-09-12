@@ -52,3 +52,31 @@ switch (true) {
     default:
         console.log("Need more plants");
 }
+
+// PART 2
+let plantCount = 100;
+let loop = true;
+let weekCount = 1;
+let space = 0;
+let radiusPart2 = 0;
+while (loop) {
+    plantCount = plantCount * 2;
+    weekCount++;
+    console.log("Week: " + weekCount);
+    console.log("Plant count: " + plantCount);
+    console.log("Space taken: " + plantCount * minSpace);
+    if(weekCount === 10) {
+        loop = false;
+        space = plantCount * minSpace;
+    }
+}
+
+radiusPart2 = Math.sqrt(space / PI);
+console.log("The radius of the expanded circular garden should be: " + radiusPart2.toFixed(1) + "m")
+
+//  PART 3
+
+
+try {
+    
+}
