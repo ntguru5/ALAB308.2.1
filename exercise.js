@@ -68,3 +68,46 @@ radiusPart2.toFixed(1) + "m"
 );
 
 //  PART 3
+// add try catch blocks
+
+try {
+    // Calculate plant count and space required for the first week
+    const firstWeekPlantCount = startingPlants * growthRate;
+    const firstWeekSpace = firstWeekPlantCount * minSpace;
+
+    // Check if the space required exceeds the garden's available area
+    if (firstWeekSpace > area) {
+        throw new Error("The plants have exceeded the available space in the garden after 1 week!");
+    }
+
+    console.log("First week plant count: ", firstWeekPlantCount);
+    console.log("Space required after 1 week: ", firstWeekSpace);
+    console.log("Space is still sufficient after 1 week.");
+
+    // Continue with the second week
+    const secondWeekPlantCount = firstWeekPlantCount * growthRate;
+    const secondWeekSpace = secondWeekPlantCount * minSpace;
+
+    if (secondWeekSpace > area) {
+        throw new Error("The plants have exceeded the available space in the garden after 2 weeks!");
+    }
+
+    console.log("Second week plant count: ", secondWeekPlantCount);
+    console.log("Space required after 2 weeks: ", secondWeekSpace);
+    console.log("Space is still sufficient after 2 weeks.");
+
+    // Continue with the third week
+    const thirdWeekPlantCount = secondWeekPlantCount * growthRate;
+    const thirdWeekSpace = thirdWeekPlantCount * minSpace;
+
+    if (thirdWeekSpace > area) {
+        throw new Error("The plants have exceeded the available space in the garden after 3 weeks!");
+    }
+
+    console.log("Third week plant count: ", thirdWeekPlantCount);
+    console.log("Space required after 3 weeks: ", thirdWeekSpace);
+    console.log("Space is still sufficient after 3 weeks.");
+
+} catch (error) {
+    console.error(error.message);
+}
